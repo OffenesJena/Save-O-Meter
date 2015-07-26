@@ -19,7 +19,7 @@ Additionally, the concrete data will be visualized on the Open Data website [Off
  - 08.10.2015 ñ 09.10.2015 / 10.00 ñ 18.00 Uhr
  - Trafostation (Nollendorfer Straﬂe 30)
 
-###The project is supported by...
+####The project is supported by...
 - [Connecting Cities](http://www.connectingcities.net)
 - [PublicArtLab](http://www.publicartlab-berlin.de)
 - [Transmediale 2015](http://www.transmediale.de)
@@ -32,7 +32,7 @@ Additionally, the concrete data will be visualized on the Open Data website [Off
 - [Open Knowledge Foundation Deutschland e.V.](http://okfn.de)
 
 
-###Links
+####Links
 
 - http://city-visions.net/portfolio/save-o-meter/
 - http://www.connectingcities.net/project/save-o-meter
