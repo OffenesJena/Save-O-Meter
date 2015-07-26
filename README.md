@@ -20,7 +20,7 @@ Additionally, the concrete data will be visualized on the Open Data website [Off
  - Trafostation (Nollendorfer Straﬂe 30)
 
 
- ###Links
+###Links
 
 More information on this project can be found at...
 
@@ -29,8 +29,8 @@ More information on this project can be found at...
 - http://codefor.de/projekte/2015-04-10-jena-save-o-meter.html
 
 The project is supported by the following organizations and initiatives...
-- [Code for Germany](http://codefor.de)
 - [Connecting Cities](http://www.connectingcities.net)
+- [Code for Germany](http://codefor.de)
 - [PublicArtLab](http://www.publicartlab-berlin.de)
 - [Transmediale 2015](http://www.transmediale.de)
 - [Fraunhofer FOKUS](https://www.fokus.fraunhofer.de)
