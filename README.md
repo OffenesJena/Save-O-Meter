@@ -19,6 +19,9 @@ Additionally, the concrete data will be visualized on the Open Data website [Off
  - 08.10.2015 ñ 09.10.2015 / 10.00 ñ 18.00 Uhr
  - Trafostation (Nollendorfer Straﬂe 30)
 
+
+ ###Links
+
 More information on this project can be found at...
 
 - http://city-visions.net/portfolio/save-o-meter/
