@@ -1,6 +1,7 @@
 #Save-O-Meter
 
 <img src="images/20150805_140515.jpg" alt="lamp" width="200px" height="300px">
+<img src="images/20150805_133313.jpg" alt="lamp" width="400px" height="300px">
 
 Sense, collect, visualize and change your energy- and water consumption and the amount of waste you produce!
 
