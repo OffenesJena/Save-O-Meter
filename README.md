@@ -1,6 +1,6 @@
 #Save-O-Meter
 
-![lamp](https://github.com/OffenesJena/Save-O-Meter/raw/master/images/20150805_140515.jpg "lamp")
+<img src="images/20150805_140515.jpg" alt="lamp" width="200px" height="300px">
 
 Sense, collect, visualize and change your energy- and water consumption and the amount of waste you produce!
 
