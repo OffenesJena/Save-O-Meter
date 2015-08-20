@@ -23,7 +23,7 @@ Additionally, the concrete data will be visualized on the Open Data website [Off
 
 ###The Hard- and Software
 
-- [The Save-O-Meter Lamp|The%20Lamp/README.md]
+- [The Save-O-Meter Lamp](The%20Lamp/README.md)
 
 ###Links
 
