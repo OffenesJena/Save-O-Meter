@@ -21,6 +21,9 @@ Additionally, the concrete data will be visualized on the Open Data website [Off
  - 08.10.2015 – 09.10.2015 / 10.00 – 18.00 Uhr
  - Trafostation (Nollendorfer Straße 30)
 
+###The Hard- and Software
+
+- [The Save-O-Meter Lamp|The%20Lamp/README.md]
 
 ###Links
 
