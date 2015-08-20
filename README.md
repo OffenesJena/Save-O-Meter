@@ -23,9 +23,9 @@ Additionally, the concrete data will be visualized on the Open Data website [Off
 
 ###The Hard- and Software
 
-- [The Save-O-Meter Lamp](The%20Lamp/README.md)
-- [The Save-O-Meter Enery Sensor](The%20Energy%20Sensor/README.md)
-- [The Save-O-Meter Water Consumption Sensor](The%20Water%20Consumption%20Sensor/README.md)
+- [The Lamp](The%20Lamp/README.md)
+- [The Enery Sensor](The%20Energy%20Sensor/README.md)
+- [The Water Consumption Sensor](The%20Water%20Consumption%20Sensor/README.md)
 
 ###Links
 
