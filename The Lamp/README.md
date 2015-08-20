@@ -6,7 +6,7 @@ The Save-O-Meter Lamp is the main part of this visualization project. Its hardwa
 
 ###ESP8266
 
-Using the low-cost ESP8266 hardware everyone familiar with Arduino, C or LUA will be able to create a lamp for ~50 Euros.
+Using the low-cost ESP8266 hardware everyone familiar with Arduino, C or LUA will be able to create a lamp for ~50-60 Euros.
 
 - [ESP8266 Breadboard version](TheLamp_ESP8266Breadboard)
 - [ESP8266 Wired version](TheLamp_ESP8266Wired)
