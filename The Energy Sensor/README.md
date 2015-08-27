@@ -1,8 +1,8 @@
 #Save-O-Meter - The Energy Sensor
 
-- [Recom 1-Kanal Einbau Schaltnetzteil 2W, 5Vdc](http://de.rs-online.com/web/p/einbau-schaltnetzteile/7398329P/)
+- [5V 2W PCB Mount AC-DC Power Supply (Recom RAC02-05SC)](http://docs-europe.electrocomponents.com/webdocs/135f/0900766b8135f272.pdf), at  [RS](http://de.rs-online.com/web/p/einbau-schaltnetzteile/7398329P/)
 
-- [Epcos B72220 Metalloxid-Varistor (S20K275)	204-2208](http://de.rs-online.com/web/p/products/2042208/)
+- [Metalloxid-Varistor (Epcos S20K275 / B72220S0271K101)](http://docs-europe.electrocomponents.com/webdocs/13c2/0900766b813c23f5.pdf), at [RS](http://de.rs-online.com/web/p/products/2042208/)
   - For the safety of the power supply only
 
 - [Allegro ACS714 current sensor](http://www.watterott.com/de/ACS714-Current-Sensor-Carrier-30-to-30A)
