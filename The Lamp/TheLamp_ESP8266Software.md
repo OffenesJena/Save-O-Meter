@@ -32,7 +32,7 @@
 
 The following code uses a LUA function to send rainbow colors to the LED string.
 
-<img src="rainbow.jpg" alt="lamp" width="800px" height="170px">
+<img src="rainbow.jpg" alt="lamp" width="800px" height="180px">
 
 ```lua
 function rainbow(NumberOfLEDs)
