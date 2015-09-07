@@ -1,4 +1,4 @@
-#Save-O-Meter - The Lamp
+##Save-O-Meter - The Lamp
 
 <img src="../images/20150805_140515.jpg" alt="lamp" width="200px" height="300px">
 
