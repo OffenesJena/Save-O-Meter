@@ -5,14 +5,48 @@ extern "C" {
 #include <SmingCore/SmingCore.h>
 #include "wifi.h"
 
-#define LED_COUNT 60
-
 HttpServer httpd;
 
 Timer heapTimer;
 
+void cgi_receiveConsumption(HttpRequest &request, HttpResponse &response) {
+	float consumption = -1.0f;
+	if (request.getRequestMethod() == RequestMethod::GET) {
+		consumption = request.getQueryParameter("value", "-1.0").toFloat();
+	} else if (request.getRequestMethod() == RequestMethod::POST) {
+		consumption = request.getPostParameter("value", "-1.0").toFloat();
+	}
+	apa102_init(LED_COUNT);
+	apa102_start();
+	int brightness = min(31.0 - ((31.0 / 100.0) * consumption), 31.0);
+	int blue = 0;
+	int green = min(255.0 - ((255.0 / 100.0) * consumption), 255.0);
+	int red = min(((255.0 / 100.0) * consumption), 255);
+	if (brightness < 5) {
+		brightness = 5;
+	}
+	for (int i = 0; i < LED_COUNT; i++) {
+		apa102_set8(0xe0 + brightness, red, green, blue);
+	}
+	apa102_stop(LED_COUNT);
+}
+
 void printHeap() {
 	Serial.printf("Free heap: %d bytes\r\n", system_get_free_heap_size());
+}
+
+//mDNS using ESP8266 SDK functions
+void startmDNS() {
+	struct mdns_info *info = (struct mdns_info *) os_zalloc(
+			sizeof(struct mdns_info));
+	info->host_name = (char *) "lamp"; // You can replace test with your own host name
+	info->ipAddr = WifiStation.getIP();
+	info->server_name = (char *) "savelamp";
+	info->server_port = 80;
+	info->txt_data[0] = (char *) "version = now";
+	espconn_mdns_init(info);
+	//espconn_mdns_server_register();
+	espconn_mdns_enable();
 }
 
 void onFile(HttpRequest &request, HttpResponse &response) {
@@ -83,6 +117,7 @@ void initHttpd() {
 #ifdef SMING_HTTP_BODY
 	httpd.addPath("/leds", cgi_detailedConfig);
 #endif
+	httpd.addPath("/consumption", cgi_receiveConsumption);
 	httpd.setDefaultHandler(onFile);
 }
 
@@ -91,6 +126,7 @@ void connectOk() {
 			WifiStation.getSSID().c_str(),
 			WifiStation.getIP().toString().c_str());
 	initHttpd();
+	startmDNS();
 }
 
 void init() {
