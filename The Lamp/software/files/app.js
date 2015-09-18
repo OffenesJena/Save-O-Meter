@@ -22,3 +22,13 @@ function onClickBlue(event) {
   event.returnValue=false;
   return false;
 }
+
+function updateConsumption(event){
+  var consumption = document.getElementById("consumption").value;
+  var xmlHttp = new XMLHttpRequest();
+  var url="/consumption?value="+consumption;
+  xmlHttp.open( "GET", url, true );
+  xmlHttp.send( null );
+  event.returnValue=false;
+  return false;
+}

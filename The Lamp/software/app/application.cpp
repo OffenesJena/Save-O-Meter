@@ -22,8 +22,8 @@ void cgi_receiveConsumption(HttpRequest &request, HttpResponse &response) {
 	int blue = 0;
 	int green = min(255.0 - ((255.0 / 100.0) * consumption), 255.0);
 	int red = min(((255.0 / 100.0) * consumption), 255);
-	if (brightness < 5) {
-		brightness = 5;
+	if (brightness < 1) {
+		brightness = 1;
 	}
 	for (int i = 0; i < LED_COUNT; i++) {
 		apa102_set8(0xe0 + brightness, red, green, blue);
