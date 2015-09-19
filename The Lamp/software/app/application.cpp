@@ -3,11 +3,17 @@ extern "C" {
 #include "apa102.h"
 }
 #include <SmingCore/SmingCore.h>
-#include "wifi.h"
+//#include "wifi.h"
 
 HttpServer httpd;
 
 Timer heapTimer;
+
+Timer connectTimer;
+
+String network, password;
+
+bool httpInitialized = false;
 
 void cgi_receiveConsumption(HttpRequest &request, HttpResponse &response) {
 	float consumption = -1.0f;
@@ -111,14 +117,38 @@ void cgi_color(HttpRequest &request, HttpResponse &response) {
 	apa102_stop(LED_COUNT);
 }
 
+void connectWiFi();
+
+void cgi_configureWiFi(HttpRequest &request, HttpResponse &response) {
+	if (request.getRequestMethod() == RequestMethod::POST) {
+		network = request.getPostParameter("ssid", "");
+		password = request.getPostParameter("password", "");
+		Serial.printf("Configuring SSID %s\r\n", network.c_str());
+		if (network.equals("")) {
+			response.sendString("[ERROR]SSID needed \r\n");
+			response.badRequest();
+			return;
+		}
+		connectTimer.initializeMs(500, connectWiFi);
+		connectTimer.start(false);
+	} else {
+		response.badRequest();
+	}
+}
+
 void initHttpd() {
-	httpd.listen(80);
-	httpd.addPath("/color", cgi_color);
+	if (!httpInitialized) {
+		Serial.println("Enabling HTTP server on Port 80");
+		httpd.listen(80);
+		httpd.addPath("/color", cgi_color);
 #ifdef SMING_HTTP_BODY
-	httpd.addPath("/leds", cgi_detailedConfig);
+		httpd.addPath("/leds", cgi_detailedConfig);
 #endif
-	httpd.addPath("/consumption", cgi_receiveConsumption);
-	httpd.setDefaultHandler(onFile);
+		httpd.addPath("/consumption", cgi_receiveConsumption);
+		httpd.addPath("/wificonfig", cgi_configureWiFi);
+		httpd.setDefaultHandler(onFile);
+		httpInitialized = true;
+	}
 }
 
 void connectOk() {
@@ -129,6 +159,23 @@ void connectOk() {
 	startmDNS();
 }
 
+void connectFail() {
+	Serial.println("Connection to WiFi failed, enabling AccessPoint");
+	WifiStation.enable(false);
+	WifiAccessPoint.enable(true);
+	WifiAccessPoint.config("Save-O-Meter Lamp", "", AUTH_OPEN);
+	Serial.printf("WebServer is reachable under %s on port 80\r\n",
+			WifiAccessPoint.getIP().toString().c_str());
+	initHttpd();
+}
+
+void connectWiFi() {
+	WifiAccessPoint.enable(false);
+	WifiStation.enable(true);
+	WifiStation.config(network, password, true);
+	WifiStation.waitConnection(connectOk, 20, connectFail);
+}
+
 void init() {
 	Serial.begin(SERIAL_BAUD_RATE); // 115200 by default
 	Serial.systemDebugOutput(false); // Enable debug output to serial
@@ -136,10 +183,12 @@ void init() {
 	heapTimer.initializeMs(10000, printHeap);
 	heapTimer.start(true);
 
+	WifiAccessPoint.enable(false);
 	WifiStation.enable(true);
+#ifdef WIFI_SSID
 	WifiStation.config(WIFI_SSID, WIFI_PWD);
+#endif
 
-	WifiStation.waitConnection(connectOk);
-	Serial.printf("Setting %d LEDS on the strip\r\n", LED_COUNT);
+	WifiStation.waitConnection(connectOk, 20, connectFail);
 	apa102_init(LED_COUNT);
 }

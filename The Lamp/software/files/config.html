@@ -1,5 +1,5 @@
 <html>
-<head><title>Save-O-Meter Lamp</title>
+<head><title>Save-O-Meter Lamp Config</title>
 <link rel="stylesheet" type="text/css" href="pure-min.css.gz">
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,21 +7,25 @@
 <body>
 <div class="pure-g-r">
   <div class="pure-u-1-5">
-    <button class="pure-button button-red" onclick="onClickRed(this)">Red</button>
+    
   </div>
   <div class="pure-u-1-5">
-    <button class="pure-button button-green" onclick="onClickGreen(this)">Green</button>
+    <form class="pure-form pure-form-stacked" action="/wificonfig" method="post">
+      <label for="ssid">SSID</label>
+      <input type="text" name="ssid" id="ssid" placeholder="SSID">
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="Password">
+
+      <button class="pure-button">Connect</button>
+    </form>
   </div>
   <div class="pure-u-1-5">
-    <button class="pure-button button-blue" onclick="onClickBlue(this)">Blue</button>
-  </div>
-  <div class="pure-u-1-5">
-    <input id="consumption" type="text">
-    <button class="pure-button" onclick="updateConsumption(this)">Update</button>
+    
   </div>
 </div>
 
-<script src="app.js"></script>
+<script src="config.js"></script>
 <script>
 (function() {
    // your page initialization code here
