@@ -10,14 +10,14 @@
     spi.setup(1, spi.MASTER, spi.CPOL_LOW, spi.CPHA_LOW, spi.DATABITS_8, 0);
 ```
 
-3.) Send the dotStar LED strip init sequence
+3.) Define and send the dotStar LED strip init sequence
 ```lua
 
-    function init()
+    function initLEDs()
         spi.send(1, 0x00, 0x00, 0x00, 0x00)
     end
 
-    init()    
+    initLEDs()    
     
 ```
 
