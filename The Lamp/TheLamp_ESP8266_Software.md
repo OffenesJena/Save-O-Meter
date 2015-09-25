@@ -23,13 +23,13 @@
 
 4.) Repeat the following BGR sequence for every LED of the LED strip    
    The syntax is (SPIId, global brightness, BLUE, GREEN, RED)    
-   Be aware that the LED strip is a shift register, therefore the last write will not be visible until you write the next values.
+   Be aware that the data forwarding inside the LED strip is organized as a shift register. This means the first color values sent will define the color of the first LED, the **second color values sent** will define the **color of the second LED**... an so on. But not the colors values get shifted (the first color values will not move a long the LED strip), but the internal data forwarding is like a shift register.
 ```lua
     spi.send(1, 0xff, 0x00, 0x00, 0xff)
 ```
 
 5.) Send the dotStar LED strip finish sequence    
-   For more than 60 LEDs this sequence might need more bytes.
+   The data forwarding within the LED strip introduces some delay of at least one cycle. This means: If you send 15 color values, just 14 will be visible immediately. For the last one you have to send at least one additional color value. This *last values* are also called *finish sequence* and is defined as a collection of at least four 0xff bytes. For more than 60 LEDs this sequence might need more bytes.
 ```lua
     spi.send(1, 0xff, 0xff, 0xff, 0xff)
 ```
