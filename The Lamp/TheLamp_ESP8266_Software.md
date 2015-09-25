@@ -31,6 +31,7 @@
 Lazy people can write a simple LUA function to send color values to multiple LEDs at once
     
 ```lua
+
     function s(n, b, g, r, lum)
 
         if (lum == nil) then
@@ -42,6 +43,9 @@ Lazy people can write a simple LUA function to send color values to multiple LED
         end
 	
     end
+    
+    s(15, 0x00, 0x88, 0xff)		// 15x orange
+    
 ```
 
 5.) Send the dotStar LED strip finish sequence    
@@ -51,7 +55,11 @@ Lazy people can write a simple LUA function to send color values to multiple LED
 ```
 
 6.) Send new colors    
-    When you want to change the colors, just send a new init sequence `initLEDs()` and the new color values.
+    When you want to change the currently visible colors, just send a new init sequence `initLEDs()` and afterwards the new color values.
+   
+    
+##     
+    
 
 ## Send a rainbow
 
