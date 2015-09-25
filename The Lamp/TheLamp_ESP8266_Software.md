@@ -12,7 +12,13 @@
 
 3.) Send the dotStar LED strip init sequence
 ```lua
-    spi.send(1, 0x00, 0x00, 0x00, 0x00)
+
+    function init()
+	spi.send(1, 0x00, 0x00, 0x00, 0x00)
+    end
+
+    init()    
+    
 ```
 
 4.) Repeat the following BGR sequence for every LED of the LED strip    
