@@ -21,11 +21,15 @@ Additionally, the concrete data will be visualized on the Open Data website [Off
  - 08.10.2015 – 09.10.2015 / 10.00 – 18.00 Uhr
  - Trafostation (Nollendorfer Straße 30)
 
+
 ###The Hard- and Software
 
 - [The Lamp](The%20Lamp/README.md)
 - [The Energy (Current) Sensor](The%20Energy%20Sensor/README.md)
 - [The Water Consumption Sensor](The%20Water%20Consumption%20Sensor/README.md)
+- [The Smart	Trash Can](The%20Smart%20Trash%20Can/README.md)
+- [External ESP8266 Links](External_ESP8266_Links.md)
+
 
 ###Links
 
