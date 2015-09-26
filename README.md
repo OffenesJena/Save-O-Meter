@@ -8,7 +8,7 @@ Sense, collect, visualize and change your energy- and water consumption and the 
 ```text
 We have seen that computer programming is an art, because it applies accumulated knowledge to the world,    
 because it requires skill and ingenuity, and especially because it produces objects of beauty.    
-(Donald Knuth - http://www.paulgraham.com/knuth.html)`
+(Donald Knuth - http://www.paulgraham.com/knuth.html)
 ```
 
 The 'Save-O-Meter' project is a citizen science initiative by Achim Friedland, Melanie Nobis and Ricardo O’Nascimiento created during the [In/Visible Cities: Prototyping Lab](http://www.transmediale.de/content/invisible-cities-2015-prototyping-lab) as part of the [Transmediale 2015](http://www.transmediale.de). It will be a workshop with citizens in Dortmund and Jena, who are interested in their environment and technology.
