@@ -2,7 +2,9 @@
 
 The chip itself
 - [The chip vendor](http://espressif.com), [Forum](http://bbs.espressif.com) and [SDK](http://espressif.com/new-sdk-release/)
-- [ESP8266 Community Forum](https://github.com/esp8266) https://github.com/esp8266/esp8266-wiki/wiki/Toolchain
+- [ESP8266 Community Forum](http://www.esp8266.com)
+- [ESP8266 Community Forum on GitHub](https://github.com/esp8266)
+- https://github.com/esp8266/esp8266-wiki/wiki/Toolchain
 
 NodeMCU (LUA)
 - https://github.com/nodemcu/nodemcu-flasher
