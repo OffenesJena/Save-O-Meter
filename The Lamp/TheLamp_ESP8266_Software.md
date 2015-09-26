@@ -209,7 +209,7 @@ end
 Let's give it a try...
 
 ```lua
-animate(p1, 75, 50)
+animate(pattern, 75, 30)
 ```
 
 If you have seen enough... stop the animation via the timer object.
