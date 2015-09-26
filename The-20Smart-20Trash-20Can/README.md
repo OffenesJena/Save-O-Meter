@@ -1,2 +1,0 @@
-# The Smart Trash Can
-
