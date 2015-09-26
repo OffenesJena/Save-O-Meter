@@ -12,6 +12,8 @@ Using the low-cost ESP8266 hardware everyone familiar with Arduino, C or LUA wil
 - [ESP8266 Wired version](TheLamp_ESP8266_Wired.md)
 - [ESP8266 PCB version](TheLamp_ESP8266_PCB.md) (coming soon!)
 - [ESP8266 Software](TheLamp_ESP8266_Software.md)
+- [ESP8266 Links](TheLamp_ESP8266_Links.md)
+
 
 ###Netduino 3 Wi-Fi
 
