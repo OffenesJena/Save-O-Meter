@@ -24,8 +24,8 @@ Additionally, the concrete data will be visualized on the Open Data website [Off
 
 **Workshop in Jena**
  - [CITY VISIONS 2015](http://city-visions.net)
- - 08.10.2015 – 09.10.2015 / 10.00 – 18.00 Uhr
- - Trafostation (Nollendorfer Straße 30)
+ - 08.10.2015 – 10.10.2015 / 19.00 – 21.00 Uhr
+ - Jena Tourist Information (Markt 16, Bohlenstube)
 
 
 ###The Hard- and Software
